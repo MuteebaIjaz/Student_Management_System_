@@ -3,24 +3,22 @@
  * Student Management System - Global Configuration
  */
 
-// Base URL (Always include trailing slash)
-define('BASE_URL', 'http://localhost/Student_Management_System/');
+// Database Settings - Uses Railway variables if they exist, otherwise defaults to local
+define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: 'student_management_system');
+define('DB_USER', getenv('MYSQLUSER') ?: 'root');
+define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
+define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
 
-// Database Settings
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'student_management_system');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Base URL - On Railway, this should be your public URL
+// If the RAILWAY_PUBLIC_DOMAIN variable exists, use it.
+$public_url = getenv('RAILWAY_PUBLIC_DOMAIN') 
+    ? 'https://' . getenv('RAILWAY_PUBLIC_DOMAIN') . '/' 
+    : 'http://localhost/Student_Management_System/';
 
-// Session Security Configuration
-ini_set('session.cookie_httponly', 1);
-ini_set('session.use_only_cookies', 1);
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-    ini_set('session.cookie_secure', 1);
-}
+define('BASE_URL', $public_url);
 
-// Global Constants
+// ... rest of your session security and constants ...
 define('APP_NAME', 'Zenith Learn');
 define('APP_TAGLINE', 'Elite Student Management System');
-
 ?>
