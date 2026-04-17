@@ -10,6 +10,11 @@ class Database {
 
     private function __construct() {
         try {
+            if (!extension_loaded('pdo_mysql')) {
+                $availableDrivers = implode(', ', PDO::getAvailableDrivers());
+                die("Database Connection Failed: pdo_mysql extension not loaded. Available PDO drivers: " . $availableDrivers);
+            }
+
             $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4";
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -18,7 +23,8 @@ class Database {
             ];
             $this->connection = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
-            die("Database Connection Failed: " . $e->getMessage());
+            $availableDrivers = implode(', ', PDO::getAvailableDrivers());
+            die("Database Connection Failed: " . $e->getMessage() . ". Available PDO drivers: " . $availableDrivers);
         }
     }
 
