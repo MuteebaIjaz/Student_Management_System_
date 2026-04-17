@@ -3,7 +3,7 @@
     PHP_EXTENSION_PDO_MYSQL = "1"
 
 [phases.setup]
-    nixPkgs = ["...", "php82", "php82Extensions.mysqli", "php82Extensions.pdo-mysql"]
+    nixPkgs = ["...", "php82", "php82Packages.mysqli", "php82Packages.pdo_mysql"]
 
 [phases.build]
     # Keep this only if you have a composer.json file
