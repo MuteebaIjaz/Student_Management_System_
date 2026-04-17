@@ -3,4 +3,10 @@
     PHP_EXTENSION_PDO_MYSQL = "1"
 
 [phases.setup]
-    nixPkgs = ["...", "php82Extensions.mysqli", "php82Extensions.pdo_mysql"] 
+    nixPkgs = ["...", "php82Extensions.mysqli", "php82Extensions.pdo_mysql"]
+
+[phases.build]
+    cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[start]
+    cmd = "php -S 0.0.0.0:$PORT index.php" 
