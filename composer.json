@@ -6,5 +6,9 @@
             "email": "Muteebabaloch08@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo_mysql": "*",
+        "ext-mysqli": "*"
+    }
 }
