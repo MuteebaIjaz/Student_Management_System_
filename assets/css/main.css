@@ -1,0 +1,663 @@
+/* Zenith Learn - Premium Design System */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #10b981;
+    --accent: #f59e0b;
+    --dark: #1e293b;
+    --darker: #0f172a;
+    --light: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --glass: rgba(255, 255, 255, 0.7);
+    --radius-sm: 0.375rem;
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--gray-100);
+    color: var(--text-main);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Auth Pages (Login/Register) */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+    padding: 2rem;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+.auth-logo {
+    width: 120px;
+    margin-bottom: 2rem;
+}
+
+/* Form Elements */
+.form-control {
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+/* Sidebar Refinement - LIGHT THEME */
+.nxl-navigation {
+    background: var(--white) !important;
+    border-right: 1px solid var(--gray-200) !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.02);
+}
+
+/* FIX 1: Sidebar logo/title — compact & clean, never clips */
+.nxl-navigation .m-header {
+    height: auto !important;
+    min-height: 64px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem !important;
+    border-bottom: 1px solid var(--gray-200);
+    overflow: visible !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* Logo image — small and sharp */
+.nxl-navigation .m-header img {
+    height: 32px !important;
+    width: 32px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+/* Brand name — single line, right of logo */
+.nxl-navigation .m-header h5 {
+    color: var(--dark) !important;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.nxl-item.nxl-caption label {
+    color: var(--text-muted) !important;
+    text-transform: uppercase;
+    font-size: 0.65rem !important;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+/* FIX 2: Sidebar icon alignment — flex on link + proper icon container */
+.nxl-link {
+    color: var(--text-main) !important;
+    border-radius: var(--radius) !important;
+    margin: 0.25rem 0.75rem !important;
+    padding: 0.6rem 1rem !important;
+    font-weight: 500;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.nxl-micon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+    margin-right: 0 !important; /* gap handles spacing now */
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.nxl-micon i {
+    display: block;
+    line-height: 1;
+}
+
+.nxl-mtext {
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nxl-link:hover, .nxl-item.active > .nxl-link {
+    background: var(--gray-100) !important;
+    color: var(--primary) !important;
+}
+
+.nxl-link i {
+    color: var(--text-muted) !important;
+    transition: color 0.2s ease;
+}
+
+.nxl-link:hover i, .nxl-item.active > .nxl-link i {
+    color: var(--primary) !important;
+}
+
+/* Premium Active State Accents */
+.nxl-item.active > .nxl-link {
+    background: #f0f4ff !important;
+    color: var(--primary) !important;
+    position: relative;
+    font-weight: 600;
+}
+
+.nxl-item.active > .nxl-link::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Submenu Transitions & Interaction */
+.nxl-submenu {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent !important;
+    padding-left: 0.5rem !important;
+}
+
+.nxl-submenu .nxl-item .nxl-link {
+    font-size: 0.825rem !important;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    margin: 0.1rem 1rem !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.nxl-submenu .nxl-item .nxl-link-inner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.3;
+    transform: translateY(-50%);
+}
+
+.nxl-submenu .nxl-item.active .nxl-link {
+    opacity: 1;
+    color: var(--primary) !important;
+    background: transparent !important;
+    border-left: none !important;
+    font-weight: 600;
+}
+
+.nxl-submenu .nxl-item.active .nxl-link::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px var(--primary);
+}
+
+/* Header/Topbar */
+.nxl-header {
+    background: var(--glass) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200) !important;
+    height: 72px !important;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem !important; /* Fixed padding for balance */
+}
+
+.header-wrapper {
+    width: 100%;
+    max-width: 1400px; /* Center alignment constraint */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FIX 3: Search bar — visible background, border, and dark search icon */
+.header-search {
+    background: #f1f5f9;
+    border: 1.5px solid #cbd5e1;
+    border-radius: var(--radius-lg);
+    padding: 0.5rem 1rem;
+    width: 320px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.header-search:focus-within {
+    background: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+    width: 400px;
+}
+
+/* Search icon: always dark and visible against any background */
+.header-search i,
+.header-search .feather-search {
+    color: #475569 !important;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-right: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header-search input {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.9rem;
+    color: #1e293b !important;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-search input::placeholder {
+    color: #94a3b8 !important;
+}
+
+.header-search input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+/* Sidebar Behavior Fixes */
+.nxl-navigation.nxl-navigation-vertical-mini .nxl-mtext,
+.nxl-navigation.nxl-navigation-vertical-mini .m-header h5,
+.nxl-navigation.nxl-navigation-vertical-mini .m-header h5 span,
+.nxl-navigation.nxl-navigation-vertical-mini .nxl-caption,
+.nxl-navigation.nxl-navigation-vertical-mini .nxl-arrow {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    white-space: nowrap;
+}
+
+/* Ensure only logo appears in mini-mode */
+.nxl-navigation.nxl-navigation-vertical-mini .m-header {
+    padding: 1.5rem 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+}
+
+.nxl-navigation.nxl-navigation-vertical-mini .m-header img {
+    margin-bottom: 0 !important;
+    max-height: 35px !important;
+}
+
+/* DESKTOP STICKY SIDEBAR (Forced Expanded) */
+@media (min-width: 1025px) {
+    /* Prevent toggle buttons from appearing on desktop */
+    .nxl-navigation-toggle {
+        display: none !important;
+    }
+
+    /* Force Sidebar to be permanently expanded */
+    .nxl-navigation {
+        width: 250px !important;
+        left: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Force all text in sidebar to be visible */
+    .nxl-navigation .nxl-mtext,
+    .nxl-navigation .m-header h5,
+    .nxl-navigation .m-header h5 span,
+    .nxl-navigation .nxl-caption,
+    .nxl-navigation .nxl-arrow {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Sidebar header: horizontal row layout on desktop */
+    .nxl-navigation .m-header {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 64px !important;
+        padding: 0.75rem 1rem !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 0.6rem;
+        overflow: visible !important;
+    }
+
+    .nxl-navigation .m-header img {
+        height: 32px !important;
+        width: 32px !important;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 6px;
+        margin-bottom: 0 !important;
+    }
+
+    .nxl-navigation .m-header h5 {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        color: var(--dark) !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Force Layout content to shift right */
+    .nxl-header {
+        left: 250px !important;
+        width: calc(100% - 250px) !important;
+    }
+
+    .nxl-container {
+        margin-left: 250px !important;
+        width: calc(100% - 250px) !important;
+    }
+
+    /* Disable hover expansion logic */
+    .nxl-navigation:hover {
+        width: 250px !important;
+    }
+}
+
+/* Disable automatic expansion on hover completely */
+.nxl-navigation-vertical-mini:hover {
+    width: 80px !important; /* Keep width locked */
+}
+
+.nxl-navigation-vertical-mini:hover .nxl-mtext,
+.nxl-navigation-vertical-mini:hover .nxl-arrow,
+.nxl-navigation-vertical-mini:hover .nxl-caption {
+    display: none !important;
+}
+
+/* Mobile Responsiveness & Layout Hardening */
+@media (max-width: 1024px) {
+    .header-search {
+        display: none !important;
+    }
+    
+    .nxl-container {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    
+    .nxl-header {
+        left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nxl-header {
+        padding: 0 0.75rem !important;
+    }
+    
+    .header-wrapper {
+        gap: 0.5rem;
+    }
+
+    .header-left {
+        gap: 0.75rem !important;
+    }
+
+    .header-right .d-flex {
+        gap: 0.5rem !important;
+    }
+
+    .header-search {
+        display: none !important;
+    }
+    
+    .nxl-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+    
+    .page-header {
+        padding: 1.5rem 1rem !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 1rem;
+    }
+    
+    .page-header-right {
+        width: 100%;
+    }
+    
+    .page-header-right .btn {
+        width: 100%;
+    }
+
+    .table-responsive {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .card-body {
+        padding: 0.75rem !important;
+    }
+
+    /* Fixed profile image size on mobile header */
+    .user-avtar {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+/* Fix for extra small devices */
+@media (max-width: 375px) {
+    .header-left .nxl-navigation-toggle {
+        display: none; /* Hide internal toggle to save space, rely on mobile-toggler */
+    }
+}
+
+/* Removed old tooltip simulation that caused expansion feel */
+
+/* Dashboard Cards */
+.stat-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Utilities */
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.bg-primary-soft { background-color: rgba(99, 102, 241, 0.1); }
+.bg-success-soft { background-color: rgba(16, 185, 129, 0.1); }
+.bg-warning-soft { background-color: rgba(245, 158, 11, 0.1); }
+.bg-danger-soft { background-color: rgba(239, 68, 68, 0.1); }
+.bg-info-soft { background-color: rgba(6, 182, 212, 0.1); }
+.bg-gray-100 { background-color: var(--gray-100) !important; }
+
+/* FIX 4: Action Buttons — solid primary fill, visible on white backgrounds, dark hover */
+.btn-action-view {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.btn-action-view:hover {
+    background: var(--primary-dark) !important;
+    color: #ffffff !important;
+    filter: brightness(0.92);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+.btn-action-edit {
+    background: var(--secondary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.btn-action-edit:hover {
+    background: #059669 !important;
+    color: #ffffff !important;
+    filter: brightness(0.92);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+.btn-action-delete {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.btn-action-delete:hover {
+    background: #dc2626 !important;
+    color: #ffffff !important;
+    filter: brightness(0.92);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+/* Generic view button used in subject cards — fix white-on-white issue */
+.view-btn {
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.view-btn:hover {
+    background: var(--primary-dark) !important;
+    color: #ffffff !important;
+    filter: brightness(0.92);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.table .btn-sm {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.table .btn-sm i {
+    font-size: 0.9rem;
+}
