@@ -6,7 +6,7 @@
     nixPkgs = ["...", "php82Extensions.mysqli", "php82Extensions.pdo_mysql"]
 
 [phases.build]
+    # Only keep this if you actually have a composer.json file
     cmds = ["composer install --no-dev --optimize-autoloader"]
 
-[start]
-    cmd = "php -S 0.0.0.0:$PORT index.php" 
+# Remove the [start] section entirely to let Railway use FrankenPHP 🐘
