@@ -5,7 +5,7 @@
 
 // Database Settings - Uses Railway variables if they exist, otherwise defaults to local
 define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
-define('DB_NAME', getenv('MYSQLDATABASE') ?: 'student_management_system');
+define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'student_management_system');
 define('DB_USER', getenv('MYSQLUSER') ?: 'root');
 define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
 define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
