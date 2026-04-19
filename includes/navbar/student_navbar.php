@@ -1,7 +1,7 @@
 <nav class="nxl-navigation">
     <div class="navbar-wrapper">
         <div class="m-header p-4 d-flex flex-column align-items-center">
-            <img src="<?php echo BASE_URL; ?>assets/images/logo.png" alt="Logo" class="img-fluid mb-2" style="max-height: 45px;">
+            <img src="<?php echo BASE_URL; ?>assets/images/Logo.png" alt="Logo" class="img-fluid mb-2" style="max-height: 45px;">
             <h5 class="text-dark fw-bold mb-0">Zenith <span class="text-primary">Learn</span></h5>
         </div>
         <div class="navbar-content">

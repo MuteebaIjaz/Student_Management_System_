@@ -63,7 +63,7 @@ if (isset($_POST['Save_Password'])) {
 <body>
     <main class="auth-wrapper">
         <div class="glass-card text-center">
-            <img src="<?php echo BASE_URL; ?>assets/images/logo.png" alt="Logo" class="auth-logo">
+            <img src="<?php echo BASE_URL; ?>assets/images/Logo.png" alt="Logo" class="auth-logo">
             <h2 class="fw-bold mb-1">Security Update</h2>
             <p class="text-muted mb-4">Please set your new secure password</p>
             
