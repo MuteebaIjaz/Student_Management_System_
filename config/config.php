@@ -1,24 +1,28 @@
 <?php
 /**
- * Student Management System - Global Configuration
+ * Student Management System - InfinityFree Configuration
  */
 
-// Database Settings - Uses Railway variables if they exist, otherwise defaults to local
-define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
-define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'railway');
-define('DB_USER', getenv('MYSQLUSER') ?: 'root');
-define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
-define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
+// These values are found in your InfinityFree Control Panel
+define('DB_HOST', 'sql201.infinityfree.com'); // Replace with your 'MySQL Hostname'
+define('DB_NAME', 'if0_41747606_student_management_system');        // Replace with your 'Database Name'
+define('DB_USER', '	if0_41747606');            // Replace with your 'vPanel Username'
+define('DB_PASS', 'Pakistan24may');  // Replace with your hosting account password
+define('DB_PORT', '3306');                   // Default is usually 3306
 
-// Base URL - On Railway, this should be your public URL
-// If the RAILWAY_PUBLIC_DOMAIN variable exists, use it.
-$public_url = getenv('RAILWAY_PUBLIC_DOMAIN') 
-    ? 'https://' . getenv('RAILWAY_PUBLIC_DOMAIN') . '/' 
-    : 'http://localhost/Student_Management_System/';
+// Base URL for InfinityFree
+// Replace with your actual assigned sub-domain
+define('BASE_URL', 'http://muteebaijaz.infinityfreeapp.com/');
 
-define('BASE_URL', $public_url);
-
-// ... rest of your session security and constants ...
 define('APP_NAME', 'Zenith Learn');
 define('APP_TAGLINE', 'Elite Student Management System');
+
+// Connect using PDO (Recommended)
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";port=" . DB_PORT . ";charset=utf8mb4";
+    $pdo = new PDO($dsn, DB_USER, DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database Connection Failed: " . $e->getMessage());
+}
 ?>
