@@ -5,7 +5,7 @@
 
 // These values are found in your InfinityFree Control Panel
 define('DB_HOST', 'sql201.infinityfree.com'); // Replace with your 'MySQL Hostname'
-define('DB_NAME', 'if0_41747606_student_management_system');        // Replace with your 'Database Name'
+define('DB_NAME', 'if0_41747606_student_management_system');
 define('DB_USER', 'if0_41747606');        // Replace with your 'vPanel Username'
 define('DB_PASS', 'Pakistan24may');  // Replace with your hosting account password
 define('DB_PORT', '3306');                   // Default is usually 3306
